@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Bottle from "../Bottle/Bottle";
 import './Bottles.css'
+import { getTheCart } from "../../localstorage";
 
 
 
@@ -18,6 +19,7 @@ useEffect(() => {
 const handleCart=(bottle)=>{
     const  newCart=[...cart,bottle]
     setCart(newCart)
+    getTheCart(bottle.id)
 }
 
 
